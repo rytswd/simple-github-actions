@@ -30,4 +30,6 @@ jobs:
 
       - name: Echo env teapot
         run: |
-          echo '${{ env.teapot }}'
+          echo << 'EOF'
+          ${{ env.teapot }}
+          echo 'EOF'
