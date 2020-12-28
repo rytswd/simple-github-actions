@@ -1,0 +1,33 @@
+name: Env manipulation example
+
+on:
+  push:
+    paths:
+      - .github/workflows/env-manipulation.yaml
+
+jobs:
+  simple-date:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get date
+        run: |
+          echo "current_date=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Echo env date
+        run: |
+          echo "${{ env.current_date }}"
+
+  simple-curl:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get teapot
+        run: |
+          echo 'teapot<<EOF' >> $GITHUB_ENV
+          curl https://httpbin.org/status/418 >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+
+      - name: Echo env teapot
+        run: |
+          echo "${{ env.teapot }}"
