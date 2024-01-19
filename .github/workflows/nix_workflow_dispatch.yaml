@@ -32,10 +32,12 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v4
-      - name: Install Nix
-        uses: cachix/install-nix-action@v25
-        with:
-          nix_path: nixpkgs=channel:nixos-unstable
+      # - name: Install Nix
+      #   uses: cachix/install-nix-action@v25
+      #   with:
+      #     nix_path: nixpkgs=channel:nixos-unstable
+      - name: Install Nix using DeterminateSystems
+        uses: DeterminateSystems/nix-installer-action@v9
       - name: Handle Nix Cache
         uses: DeterminateSystems/magic-nix-cache-action@v2
       - name: Use package dependency
