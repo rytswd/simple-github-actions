@@ -16,6 +16,7 @@
         basePackages = with pkgs; [
           act
           gh
+          neofetch
         ];
 
         customOverrides = self: super: {
