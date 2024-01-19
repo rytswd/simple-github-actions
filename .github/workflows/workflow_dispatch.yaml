@@ -21,6 +21,9 @@ on:
         options:
           - staging
           - prod
+      description:
+        description: "Description to add"
+        type: string
 
 jobs:
   log-the-inputs:
