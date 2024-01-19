@@ -27,6 +27,7 @@ on:
 
 jobs:
   log-the-inputs:
+    name: Workflow Dispatch Testing
     runs-on: ubuntu-latest
     steps:
       - run: |

@@ -27,6 +27,7 @@ on:
 
 jobs:
   log-the-inputs:
+    name: Workflow Testing with Nix
     runs-on: ubuntu-latest
     steps:
       - name: Check out
