@@ -36,6 +36,8 @@ jobs:
         uses: cachix/install-nix-action@v25
         with:
           nix_path: nixpkgs=channel:nixos-unstable
+      - name: Handle Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@v2
       - name: Use package dependency
         run: |
           nix develop -c neofetch
