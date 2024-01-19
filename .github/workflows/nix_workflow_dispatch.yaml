@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out
-        uses: github/actions@v4
+        uses: actions/checkout@v4
       - name: Install Nix
         uses: cachix/install-nix-action@v25
         with:
